@@ -171,7 +171,18 @@ console.log(ftTocm(15));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
 
+function anoyingsong(bottles){
+for (i = bottles; i >= 0; i--){
+  if (i > 0){
+      console.log("Total bottles in to wall " + i + " pass one around and now is " + (i-1) + " bottles in the wall"); 
+  }
+  else{
+    console.log("no more bottles");
+  }
 
+}
+}
+ anoyingsong(99);
 
 /************************************************************** Task 7 **************************************************************/
 //Grade Calculator
@@ -181,7 +192,24 @@ console.log(ftTocm(15));
 //70s should be Cs 
 //60s should be D 
 //and anything below 60 should be F
-  
+function grading(grade){
+  if (grade >= 90){
+    return "A";
+  }
+  else if (grade < 90 && grade >= 80){
+    return "B";
+  }  
+  else if (grade < 80 && grade >= 70) {
+    return "C";
+  } 
+  else if (grade < 70 && grade >= 60){
+    return "C";
+  }
+  else if (grade < 60){
+    return "F";
+  } 
+}
+console.log(grading(75));
 
   
   
@@ -191,6 +219,18 @@ console.log(ftTocm(15));
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function vowls(string){
+  let count = 0;
+  let x;
+  for  (x of string){
+    if (x == 'a' | x == 'e'| x == 'i'| x == 'o'| x == 'u'|x == 'A' | x == 'E'| x == 'I'| x == 'O'| x == 'U'){
+      count=count+1;
+    }
+  }
+  return count;
+}
+
+console.log(vowls('Erick'));
 
 
 
@@ -199,7 +239,35 @@ console.log(ftTocm(15));
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
-
-
+let choice = document.getElementById("pick").value;
+function game(choice){
+    let comp = Math.floor(Math.random()*3)+1; /* Comp opt: 1-rock 2-paper and 3-sissor*/
+    let result;
+    if ( choice === 'rock' && comp === 1){
+        console.log('Draw');
+    }
+    else if ( choice === 'sissors' && comp === 3){
+        result = 'Draw';
+    }
+    else if ( choice === 'paper' && comp === 2){
+        result = 'Draw';
+    }
+    else if ( choice === 'rock' && comp === 1){
+        result = 'Draw';
+    }
+    else if ( choice === 'rock' && comp === 3){
+        result = 'You Win!';
+    }
+    else if ( choice === 'paper' && comp === 1){
+        result = 'You Win!';
+    }
+    else if ( choice === 'sissors' && comp === 2){
+        result = 'You Win!';
+    }
+    else {
+        result = 'You lose!';
+    }
+    document.getElementById("print").innerHTML = result;
+ } 
 
 
